@@ -29,20 +29,20 @@ const print = async (content, id) => {
     if (content.afterRender) content.afterRender(id);
 };
 
-router.on("/admin/*", () => {}, {
-    before: (done) => {
-        if (localStorage.getItem("user")) {
-            const userId = JSON.parse(localStorage.getItem("user")).roleId;
-            if (userId === "admin") {
-                done();
-            } else {
-                document.location.href = "/";
-            }
-        } else {
-            document.location.href = "/";
-        }
-    },
-});
+// router.on("/admin/*", () => {}, {
+//     before: (done) => {
+//         if (localStorage.getItem("user")) {
+//             const userId = JSON.parse(localStorage.getItem("user")).roleId;
+//             if (userId === "admin") {
+//                 done();
+//             } else {
+//                 document.location.href = "/";
+//             }
+//         } else {
+//             document.location.href = "/";
+//         }
+//     },
+// });
 
 router.on({
     // phần user
